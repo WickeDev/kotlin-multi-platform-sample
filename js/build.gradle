@@ -12,12 +12,8 @@ dependencies {
     kotlinOptions.moduleKind = "umd"
 }
 
-compileKotlin2Js {
-    kotlinOptions.outputFile = "${buildDir}/output/bundle.js"
-}
-
 task run(type: NodeTask, dependsOn: [compileKotlin2Js, nodeSetup]) {
-    group = 'build'
+    group = 'application'
     script = compileKotlin2Js.outputFile
 }
 
